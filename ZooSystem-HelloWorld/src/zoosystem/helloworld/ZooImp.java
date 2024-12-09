@@ -17,7 +17,7 @@ public class ZooImp implements Zoo{
     // interface implementation 
     // Create a ZooImp constructor 
     // Pick a collection type
-    private List<Animal> animals;
+    private final List<Animal> animals;
     
     public ZooImp(){
         
