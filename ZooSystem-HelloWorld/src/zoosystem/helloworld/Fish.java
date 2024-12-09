@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package zoosystem.helloworld;
+package zoo;
+
+import zoosystem.helloworld.Habitat;
 
 /**
  *
@@ -16,10 +18,10 @@ public class Fish extends Animal{
     // with the parent class attributes
     
     // Create a Dog name: Flix,    2,         12.5,         Home 
-    public Fish(String name, int age, double weight, String habitat){
+    public Fish(String name, int age, double weight, Habitat habitat,  String behaviour, boolean hunger, boolean healthy){
             
             // we want to send this back to the parent 
-            super(name, age, weight, habitat);
+            super(name, age, weight, habitat,  behaviour, hunger, healthy);
     }
 
 }
