@@ -32,11 +32,10 @@ public class Menu implements Zoo{
     }
 
     @Override
-//                        Animal(String name, int age, double weight, String habitat)
+//  Animal(String name, int age, double weight, String habitat)
     public void addAnimal(Animal animal) {
 
     //IMPLEMENTAR
-
     } // requires we pass in animal information
 
     @Override
@@ -45,5 +44,47 @@ public class Menu implements Zoo{
         GetRandomAnimal.getRandomAnimal(animals);
 
     }
+
+    @Override
+    public void listSickAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listMaleAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listFemaleAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listNeuteredAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listHerbivoreAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listOmnivoreAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listCarnivoreAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void listHungryAnimals(List<Animal> animals) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
     
 }
