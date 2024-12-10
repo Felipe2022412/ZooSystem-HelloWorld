@@ -4,8 +4,7 @@
  */
 package animalsclasses;
 
-import zoosystem.Habitat;
-import zoosystem.HabitatType;
+import zoosystem.HabitatType.HabitatTypes;
 
 /**
  *
@@ -18,7 +17,7 @@ public class Animal {
     private String name;
     private int age;
     private double weight;
-    private HabitatType habitat;
+    private HabitatTypes habitat;
     private String breed;
     private double size;
     private String diet;
@@ -30,7 +29,7 @@ public class Animal {
     private String bloodType;
 
 //    / The constructor is our point of reference when communicating with this class
-    public Animal(String type, String name, int age, double weight, HabitatType habitat, String breed, double size, String diet, String gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, String bloodType) {
+    public Animal(String type, String name, int age, double weight, HabitatTypes habitat, String breed, double size, String diet, String gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, String bloodType) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -103,11 +102,11 @@ public class Animal {
         this.weight = weight;
     }
 
-    public HabitatType getHabitat() {
+    public HabitatTypes getHabitat() {
         return habitat;
     }
 
-    public void setHabitat(HabitatType habitat) {
+    public void setHabitat(HabitatTypes habitat) {
         this.habitat = habitat;
     }
 

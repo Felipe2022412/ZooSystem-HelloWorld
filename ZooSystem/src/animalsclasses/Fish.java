@@ -11,17 +11,10 @@ import zoosystem.HabitatType;
  *
  * @author Lecturer
  */
-public class Fish extends Animal{
+public class Fish extends Animal {
 
-    public Fish(String type, String name, int age, double weight, HabitatType habitat, String breed, double size, String diet, String gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, String bloodType) {
+    public Fish(String type, String name, int age, double weight, HabitatType.HabitatTypes habitat, String breed, double size, String diet, String gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, String bloodType) {
         super(type, name, age, weight, habitat, breed, size, diet, gender, neutered, behaviour, hungerStatus, healthStatus, bloodType);
     }
-
-
-
-
-
-
-    
 
 }
