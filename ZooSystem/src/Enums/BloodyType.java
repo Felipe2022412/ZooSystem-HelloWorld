@@ -10,9 +10,10 @@ package Enums;
  */
 public class BloodyType {
 
-    enum BloodyTypes {
+   public enum BloodyTypes {
 
         ENDOTHERMIC,//Warm-blooded (Endothermic)
         ECTOTERMIC//Cold-blooded (Ectothermic)
+        
     }
 }

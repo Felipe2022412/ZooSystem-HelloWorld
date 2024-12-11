@@ -20,9 +20,10 @@ public interface Zoo {
             LIST_ANIMALS, // 0 +1
             LIST_TYPES, // 1 +1
             ADD_ANIMAL, // 2 +1
-            RANDOM_ANIMAL,// 3 + 1
-            MORE_OPTIONS, // 4 + 1
-            EXIT // 5+1
+            REMOVE_ANIMAL,// 3 + 1
+            RANDOM_ANIMAL,// 4 + 1
+            MORE_OPTIONS, //5+1
+            EXIT // 6+1
 
         }
    
@@ -36,6 +37,7 @@ public interface Zoo {
          LIST_OMNIVORE_ANIMALS,
          LIST_CARNIVORE_ANIMALS,
          LIST_HUNGRY_ANIMALS,
+         RETURN_TO_MAIN_MENU
          
         }
         // implementing interfaces requires 
@@ -46,6 +48,8 @@ public interface Zoo {
         void listAllTypes(List<Animal> animals);
         
         void addAnimal(Animal animal); // requires we pas in animal information
+        
+        void removeAnimal(Animal animal);
         
         void getRandom(List<Animal> animals);
         

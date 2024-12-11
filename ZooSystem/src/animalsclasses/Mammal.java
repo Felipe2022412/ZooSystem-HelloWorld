@@ -4,7 +4,10 @@
  */
 package animalsclasses;
 
-import zoosystem.HabitatType;
+import Enums.BloodyType;
+import Enums.Diet;
+import Enums.Gender;
+import Enums.NaturalHabitatType;
 
 /**
  *
@@ -12,12 +15,8 @@ import zoosystem.HabitatType;
  */
 public class Mammal extends Animal {
 
-    public Mammal(String type, String name, int age, double weight, HabitatType.HabitatTypes habitat, String breed, double size, String diet, String gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, String bloodType) {
+    public Mammal(String type, String name, int age, double weight, NaturalHabitatType.HabitatTypes habitat, String breed, double size, Diet.DietTypes diet, Gender.GenderTypes gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, BloodyType.BloodyTypes bloodType) {
         super(type, name, age, weight, habitat, breed, size, diet, gender, neutered, behaviour, hungerStatus, healthStatus, bloodType);
     }
-
-
-
-
 
 }

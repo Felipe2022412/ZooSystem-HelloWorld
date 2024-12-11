@@ -1,15 +1,16 @@
 package zoosystem;
 
+import Enums.NaturalHabitatType;
 import animalsclasses.Animal;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Habitat {
 
-    private HabitatType.HabitatTypes habitatType; // Usar o enum diretamente
+    private NaturalHabitatType.HabitatTypes habitatType; // Usar o enum diretamente
     private List<Animal> animalList; // Lista de animais no habitat
 
-    public Habitat(HabitatType.HabitatTypes habitatType) {
+    public Habitat(NaturalHabitatType.HabitatTypes habitatType) {
         this.habitatType = habitatType;
         this.animalList = new ArrayList<>(); // Inicializa a lista de animais
     }
@@ -35,7 +36,7 @@ public class Habitat {
     }
 
     // Obter tipo de habitat
-    public HabitatType.HabitatTypes getHabitatType() {
+    public NaturalHabitatType.HabitatTypes getHabitatType() {
         return habitatType;
     }
 

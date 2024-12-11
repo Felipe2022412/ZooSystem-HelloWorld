@@ -1,35 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package animalsclasses;
 
-import zoosystem.HabitatType.HabitatTypes;
+import Enums.NaturalHabitatType.HabitatTypes;
+import Enums.Diet.DietTypes;
+import Enums.Gender.GenderTypes;
+import Enums.BloodyType.BloodyTypes;
 
-/**
- *
- * @author Lecturer
- */
 public class Animal {
 
-    // Create some attributes 
-    private String type;//alterei
-    private String name;
-    private int age;
-    private double weight;
-    private HabitatTypes habitat;
-    private String breed;
-    private double size;
-    private String diet;
-    private String gender;
-    private boolean neutered;
-    private String behaviour;
-    private boolean hungerStatus;
-    private boolean healthStatus;
-    private String bloodType;
+    // Attributes
+    private String type;          // Type of animal (e.g., Mammal, Bird)
+    private String name;          // Name of the animal
+    private int age;              // Age of the animal
+    private double weight;        // Weight of the animal
+    private HabitatTypes habitat; // Habitat type (enum)
+    private String breed;         // Breed or species
+    private double size;          // Size of the animal
+    private DietTypes diet;       // Diet (enum)
+    private GenderTypes gender;   // Gender (enum)
+    private boolean neutered;     // Whether the animal is neutered
+    private String behaviour;     // Behavioural traits
+    private boolean hungerStatus; // Whether the animal is hungry
+    private boolean healthStatus; // Health status
+    private BloodyTypes bloodType; // Blood type (enum)
 
-//    / The constructor is our point of reference when communicating with this class
-    public Animal(String type, String name, int age, double weight, HabitatTypes habitat, String breed, double size, String diet, String gender, boolean neutered, String behaviour, boolean hungerStatus, boolean healthStatus, String bloodType) {
+    // Constructor
+    public Animal(String type, String name, int age, double weight, HabitatTypes habitat, String breed, double size,
+                  DietTypes diet, GenderTypes gender, boolean neutered, String behaviour, boolean hungerStatus,
+                  boolean healthStatus, BloodyTypes bloodType) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -46,6 +43,7 @@ public class Animal {
         this.bloodType = bloodType;
     }
 
+    // Getters and setters
     public String getType() {
         return type;
     }
@@ -126,19 +124,19 @@ public class Animal {
         this.size = size;
     }
 
-    public String getDiet() {
+    public DietTypes getDiet() {
         return diet;
     }
 
-    public void setDiet(String diet) {
+    public void setDiet(DietTypes diet) {
         this.diet = diet;
     }
 
-    public String getGender() {
+    public GenderTypes getGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(GenderTypes gender) {
         this.gender = gender;
     }
 
@@ -150,12 +148,11 @@ public class Animal {
         this.neutered = neutered;
     }
 
-    public String getBloodType() {
+    public BloodyTypes getBloodType() {
         return bloodType;
     }
 
-    public void setBloodType(String bloodType) {
+    public void setBloodType(BloodyTypes bloodType) {
         this.bloodType = bloodType;
     }
-
 }
