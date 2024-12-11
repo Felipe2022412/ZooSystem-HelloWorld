@@ -1,7 +1,8 @@
 package interfacefunctions;
 
 import animalsclasses.Animal;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 import Enums.NaturalHabitatType.HabitatTypes;
 import Enums.Diet.DietTypes;
@@ -10,7 +11,7 @@ import Enums.BloodyType.BloodyTypes;
 
 public class AddAnimal {
 
-    public static void addAnimal(List<Animal> animals) {
+    public static void addAnimal(HashMap<String, ArrayList<Animal>> animals) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the Animal Type (e.g., Mammal, Bird, Fish or a new one):");
@@ -27,7 +28,7 @@ public class AddAnimal {
         double weight = scanner.nextDouble();
         scanner.nextLine();
 
-        // Listar e selecionar o Habitat
+        // List and select Habitat
         System.out.println("Select the Habitat from the options below:");
         HabitatTypes[] habitats = HabitatTypes.values();
         for (int i = 0; i < habitats.length; i++) {
@@ -45,7 +46,7 @@ public class AddAnimal {
         double size = scanner.nextDouble();
         scanner.nextLine();
 
-        // Listar e selecionar a Dieta
+        // List and select Diet
         System.out.println("Select the Diet from the options below:");
         DietTypes[] diets = DietTypes.values();
         for (int i = 0; i < diets.length; i++) {
@@ -56,7 +57,7 @@ public class AddAnimal {
         scanner.nextLine();
         DietTypes diet = (dietOption >= 1 && dietOption <= diets.length) ? diets[dietOption - 1] : DietTypes.OMNIVORES;
 
-        // Listar e selecionar o Gênero
+        // List and select Gender
         System.out.println("Select the Gender from the options below:");
         GenderTypes[] genders = GenderTypes.values();
         for (int i = 0; i < genders.length; i++) {
@@ -67,33 +68,33 @@ public class AddAnimal {
         scanner.nextLine();
         GenderTypes gender = (genderOption >= 1 && genderOption <= genders.length) ? genders[genderOption - 1] : GenderTypes.MALE;
 
-        // Selecionar se está Neutered
+        // Is Neutered
         System.out.println("Is the Animal Neutered?");
         System.out.println("1. Yes");
         System.out.println("2. No");
         System.out.print("Enter the number: ");
         boolean neutered = scanner.nextInt() == 1;
 
-        // Selecionar o Comportamento
+        // Behaviour
         System.out.println("Enter the Behaviour:");
-        scanner.nextLine(); // Consome quebra de linha
+        scanner.nextLine(); // Consume the newline
         String behaviour = scanner.nextLine();
 
-        // Selecionar se está com fome
+        // Is Hungry
         System.out.println("Is the Animal Hungry?");
         System.out.println("1. Yes");
         System.out.println("2. No");
         System.out.print("Enter the number: ");
         boolean hungerStatus = scanner.nextInt() == 1;
 
-        // Selecionar o status de saúde
+        // Is Healthy
         System.out.println("Is the Animal Healthy?");
         System.out.println("1. Yes");
         System.out.println("2. No");
         System.out.print("Enter the number: ");
         boolean healthStatus = scanner.nextInt() == 1;
 
-        // Listar e selecionar o Tipo Sanguíneo
+        // List and select Blood Type
         System.out.println("Select the Blood Type from the options below:");
         BloodyTypes[] bloodTypes = BloodyTypes.values();
         for (int i = 0; i < bloodTypes.length; i++) {
@@ -104,9 +105,11 @@ public class AddAnimal {
         scanner.nextLine();
         BloodyTypes bloodType = (bloodTypeOption >= 1 && bloodTypeOption <= bloodTypes.length) ? bloodTypes[bloodTypeOption - 1] : BloodyTypes.ENDOTHERMIC;
 
-        // Cria o novo animal
+        // Create the new animal
         Animal newAnimal = new Animal(type, name, age, weight, habitat, breed, size, diet, gender, neutered, behaviour, hungerStatus, healthStatus, bloodType);
-        animals.add(newAnimal);
+
+        // Add the animal to the HashMap
+        animals.computeIfAbsent(type, k -> new ArrayList<>()).add(newAnimal);
 
         System.out.println("Animal has been added successfully!");
     }

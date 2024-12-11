@@ -1,26 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package interfacefunctions;
 
-import java.util.List;
 import animalsclasses.Animal;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
- *
- * @author dougl
+ * Utility class for listing all animals in the zoo.
  */
 public class ListAllAnimals {
 
-    public static void listAllAnimals(List<Animal> animals) {
-
+    public static void listAllAnimals(HashMap<String, ArrayList<Animal>> animals) {
         if (animals.isEmpty()) {
             System.out.println("No animals in the zoo.");
-        } else {
-            System.out.println("\nAnimals in the Zoo:");
-            for (Animal animal : animals) {
-                System.out.println(animal.getName() + " (" + animal.getType() + ")");
+            return;
+        }
+
+        System.out.println("\nAnimals in the Zoo:");
+        for (String type : animals.keySet()) {
+            System.out.println("\nType: " + type);
+            ArrayList<Animal> animalList = animals.get(type);
+            for (Animal animal : animalList) {
+                System.out.println("- " + animal.getName());
             }
         }
     }
