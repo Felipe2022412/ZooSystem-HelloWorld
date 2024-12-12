@@ -1,33 +1,35 @@
 package zoosystem;
 
-import Enums.NaturalHabitatType;
-import animalsclasses.Animal;
+import Enums.NaturalHabitatType; 
+import animalsclasses.Animal;    
 import java.util.ArrayList;
 import java.util.List;
 
 public class Habitat {
 
-    private NaturalHabitatType.HabitatTypes habitatType; // Usar o enum diretamente
-    private List<Animal> animalList; // Lista de animais no habitat
+    private NaturalHabitatType.HabitatTypes habitatType; // Enum to specify the habitat type
+    private List<Animal> animalList; // List to store animals in the habitat
 
+    // Constructor to initialize the habitat with a specific type
     public Habitat(NaturalHabitatType.HabitatTypes habitatType) {
         this.habitatType = habitatType;
-        this.animalList = new ArrayList<>(); // Inicializa a lista de animais
+        this.animalList = new ArrayList<>(); // Initialize an empty list of animals
     }
 
-    // Obter todos os animais no habitat
+    // Method to get all animals in the habitat
     public List<Animal> getAnimals() {
-        return animalList;
+        return animalList; // Return the list of animals
     }
 
-    // Adicionar um animal ao habitat
+    // Method to add an animal to the habitat
     public void addAnimal(Animal animal) {
-        animalList.add(animal);
-        System.out.println(animal.getName() + " adicionado ao habitat " + habitatType + ".");
+        animalList.add(animal); // Add the animal to the list
+        System.out.println(animal.getName() + " adicionado ao habitat " + habitatType + "."); // Confirmation message
     }
 
-    // Remover um animal do habitat
+    // Method to remove an animal from the habitat
     public void removeAnimal(Animal animal) {
+        // Attempt to remove the animal and provide feedback
         if (animalList.remove(animal)) {
             System.out.println(animal.getName() + " removido do habitat " + habitatType + ".");
         } else {
@@ -35,13 +37,13 @@ public class Habitat {
         }
     }
 
-    // Obter tipo de habitat
+    // Method to get the type of habitat
     public NaturalHabitatType.HabitatTypes getHabitatType() {
-        return habitatType;
+        return habitatType; // Return the habitat type
     }
 
-    // Limpar o habitat
+    // Method to simulate cleaning the habitat
     public void cleanHabitat() {
-        System.out.println("Limpando o habitat " + habitatType + "...");
+        System.out.println("Limpando o habitat " + habitatType + "..."); // Print cleaning message
     }
 }

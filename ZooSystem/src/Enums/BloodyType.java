@@ -1,19 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Enums;
 
-/**
- *
- * @author dougl
- */
+// BloodyType class containing the BloodyTypes enum
 public class BloodyType {
 
-   public enum BloodyTypes {
-
-        ENDOTHERMIC,//Warm-blooded (Endothermic)
-        ECTOTERMIC//Cold-blooded (Ectothermic)
-        
+    // Enum defining two types of blood types
+    public enum BloodyTypes {
+        ENDOTHERMIC, // Warm-blooded animals
+        ECTOTERMIC   // Cold-blooded animals
     }
 }

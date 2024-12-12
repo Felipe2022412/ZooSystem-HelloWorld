@@ -1,36 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Enums;
 
-import java.util.concurrent.AbstractExecutorService;
-
-/**
- *
- * @author dougl
- */
+// NaturalHabitatType class containing the HabitatTypes enum
 public class NaturalHabitatType {
 
+    // Enum defining various natural habitat types
+    //If new habitat is added here all code will stil working without any other changes
     public enum HabitatTypes {
-
-        // contain a couple of options 
-        SAVANNAH,
-        JUNGLE,
-        FOREST,
-        COAST,
-        DESERT,
-        OCEAN,
-        MOUNTAINS,
-        TUNDRA,
-        WETLANDS,
-        GRASSLANDS,
-        URBAN,
-        SKY, 
-        UNDERGROUND, 
-        RIVER,
-        LAKE
-
+        SAVANNAH,       
+        JUNGLE,         
+        FOREST,         
+        COAST,         
+        DESERT,         
+        OCEAN,          
+        MOUNTAINS,      
+        TUNDRA,         
+        WETLANDS,       
+        GRASSLANDS,     
+        URBAN,         
+        SKY,            
+        UNDERGROUND,    
+        RIVER,          
+        LAKE            
     }
-
 }

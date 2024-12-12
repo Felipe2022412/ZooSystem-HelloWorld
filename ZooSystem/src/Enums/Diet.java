@@ -1,19 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Enums;
 
-/**
- *
- * @author dougl
- */
+// Diet class containing the DietTypes enum
 public class Diet {
 
+    // Enum defining three dietary categories
     public enum DietTypes {
-        HERBIVORES,
-        OMNIVORES,
-        CARNIVORES
+        HERBIVORES, // Animals that eat plants
+        OMNIVORES, // Animals that eat both plants and meat
+        CARNIVORES  // Animals that eat meat
     }
-
 }

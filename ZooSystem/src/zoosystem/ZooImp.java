@@ -11,9 +11,11 @@ import java.util.HashMap;
 public class ZooImp {
     public static void main(String[] args) {
         // HashMap to store animals by type
+        // HashMap to store animals categorized by their type
         HashMap<String, ArrayList<Animal>> zooAnimals = new HashMap<>();
 
         // Add animals directly to the HashMap
+        
         // Mammals
         zooAnimals.putIfAbsent("Mammal", new ArrayList<>());
         zooAnimals.get("Mammal").add(new Animal("Mammal", "Lion", 12, 200.0,
