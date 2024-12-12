@@ -10,7 +10,7 @@ import java.util.Random;
 /**
  * Utility class to get and display a random animal from a HashMap.
  */
-public class GetRandomAnimal {
+public class GetRandom {
 
     public static void getRandomAnimal(HashMap<String, ArrayList<Animal>> animals) {
         if (animals.isEmpty()) {

@@ -88,7 +88,7 @@ public class Menu implements Zoo {
 
     @Override
     public void getRandom() {
-        GetRandomAnimal.getRandomAnimal(animals); // Calls the static utility method
+        GetRandom.getRandomAnimal(animals); // Calls the static utility method
     }
 
     // Submenu
