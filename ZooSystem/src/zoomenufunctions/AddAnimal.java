@@ -8,25 +8,24 @@ import Enums.NaturalHabitatType.HabitatTypes;
 import Enums.Diet.DietTypes;
 import Enums.Gender.GenderTypes;
 import Enums.BloodyType.BloodyTypes;
+import utils.IOUtils;
 
 public class AddAnimal {
 
     public static void addAnimal(HashMap<String, ArrayList<Animal>> animals) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter the Animal Type (e.g., Mammal, Bird, Fish or a new one):");
-        String type = scanner.nextLine();
+        System.out.println("Enter the Animal Type (e.g., Mammal, Bird, Fish, or a new one):");
+        String type = IOUtils.getValidString(scanner);
 
         System.out.println("Enter the Animal Name:");
-        String name = scanner.nextLine();
+        String name = IOUtils.getValidString(scanner);
 
         System.out.println("Enter the Age:");
-        int age = scanner.nextInt();
-        scanner.nextLine();
+        int age = IOUtils.getValidInteger(scanner);
 
         System.out.println("Enter the Weight:");
-        double weight = scanner.nextDouble();
-        scanner.nextLine();
+        double weight = IOUtils.getValidDouble(scanner);
 
         // List and select Habitat
         System.out.println("Select the Habitat from the options below:");
@@ -35,16 +34,14 @@ public class AddAnimal {
             System.out.println((i + 1) + ". " + habitats[i]);
         }
         System.out.print("Enter the number corresponding to the habitat: ");
-        int habitatOption = scanner.nextInt();
-        scanner.nextLine();
-        HabitatTypes habitat = (habitatOption >= 1 && habitatOption <= habitats.length) ? habitats[habitatOption - 1] : HabitatTypes.FOREST;
+        int habitatOption = IOUtils.getValidIntegerInRange(scanner, 1, habitats.length);
+        HabitatTypes habitat = habitats[habitatOption - 1];
 
         System.out.println("Enter the Breed:");
-        String breed = scanner.nextLine();
+        String breed = IOUtils.getValidString(scanner);
 
         System.out.println("Enter the Size:");
-        double size = scanner.nextDouble();
-        scanner.nextLine();
+        double size = IOUtils.getValidDouble(scanner);
 
         // List and select Diet
         System.out.println("Select the Diet from the options below:");
@@ -53,9 +50,8 @@ public class AddAnimal {
             System.out.println((i + 1) + ". " + diets[i]);
         }
         System.out.print("Enter the number corresponding to the diet: ");
-        int dietOption = scanner.nextInt();
-        scanner.nextLine();
-        DietTypes diet = (dietOption >= 1 && dietOption <= diets.length) ? diets[dietOption - 1] : DietTypes.OMNIVORES;
+        int dietOption = IOUtils.getValidIntegerInRange(scanner, 1, diets.length);
+        DietTypes diet = diets[dietOption - 1];
 
         // List and select Gender
         System.out.println("Select the Gender from the options below:");
@@ -64,35 +60,30 @@ public class AddAnimal {
             System.out.println((i + 1) + ". " + genders[i]);
         }
         System.out.print("Enter the number corresponding to the gender: ");
-        int genderOption = scanner.nextInt();
-        scanner.nextLine();
-        GenderTypes gender = (genderOption >= 1 && genderOption <= genders.length) ? genders[genderOption - 1] : GenderTypes.MALE;
+        int genderOption = IOUtils.getValidIntegerInRange(scanner, 1, genders.length);
+        GenderTypes gender = genders[genderOption - 1];
 
         // Is Neutered
         System.out.println("Is the Animal Neutered?");
         System.out.println("1. Yes");
         System.out.println("2. No");
-        System.out.print("Enter the number: ");
-        boolean neutered = scanner.nextInt() == 1;
+        boolean neutered = IOUtils.getValidIntegerInRange(scanner, 1, 2) == 1;
 
         // Behaviour
         System.out.println("Enter the Behaviour:");
-        scanner.nextLine(); // Consume the newline
-        String behaviour = scanner.nextLine();
+        String behaviour = IOUtils.getValidString(scanner);
 
         // Is Hungry
         System.out.println("Is the Animal Hungry?");
         System.out.println("1. Yes");
         System.out.println("2. No");
-        System.out.print("Enter the number: ");
-        boolean hungerStatus = scanner.nextInt() == 1;
+        boolean hungerStatus = IOUtils.getValidIntegerInRange(scanner, 1, 2) == 1;
 
         // Is Healthy
         System.out.println("Is the Animal Healthy?");
         System.out.println("1. Yes");
         System.out.println("2. No");
-        System.out.print("Enter the number: ");
-        boolean healthStatus = scanner.nextInt() == 1;
+        boolean healthStatus = IOUtils.getValidIntegerInRange(scanner, 1, 2) == 1;
 
         // List and select Blood Type
         System.out.println("Select the Blood Type from the options below:");
@@ -101,9 +92,8 @@ public class AddAnimal {
             System.out.println((i + 1) + ". " + bloodTypes[i]);
         }
         System.out.print("Enter the number corresponding to the blood type: ");
-        int bloodTypeOption = scanner.nextInt();
-        scanner.nextLine();
-        BloodyTypes bloodType = (bloodTypeOption >= 1 && bloodTypeOption <= bloodTypes.length) ? bloodTypes[bloodTypeOption - 1] : BloodyTypes.ENDOTHERMIC;
+        int bloodTypeOption = IOUtils.getValidIntegerInRange(scanner, 1, bloodTypes.length);
+        BloodyTypes bloodType = bloodTypes[bloodTypeOption - 1];
 
         // Create the new animal
         Animal newAnimal = new Animal(type, name, age, weight, habitat, breed, size, diet, gender, neutered, behaviour, hungerStatus, healthStatus, bloodType);

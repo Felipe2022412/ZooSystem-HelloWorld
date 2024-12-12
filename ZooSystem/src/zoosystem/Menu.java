@@ -6,6 +6,7 @@ import animalsclasses.Animal;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
+import utils.IOUtils;
 
 public class Menu implements Zoo {
 
@@ -27,8 +28,8 @@ public class Menu implements Zoo {
                 System.out.println((i + 1) + ". " + Zoo.MenuOptions.values()[i]);
             }
 
-            int option = scanner.nextInt();
-            scanner.nextLine();
+            int option = IOUtils.getValidInteger(scanner);
+            
 
             if (option < 1 || option > Zoo.MenuOptions.values().length) {
                 System.out.println("Invalid option. Please select a valid option.");
@@ -76,7 +77,7 @@ public class Menu implements Zoo {
                 System.out.println((i + 1) + ". " + Zoo.SubMenuOptions.values()[i]);
             }
 
-            int option = scanner.nextInt();
+            int option = IOUtils.getValidInteger(scanner);
             scanner.nextLine();
 
             if (option < 1 || option > Zoo.SubMenuOptions.values().length) {
