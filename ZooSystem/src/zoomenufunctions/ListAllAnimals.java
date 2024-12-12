@@ -1,4 +1,4 @@
-package interfacefunctions;
+package zoomenufunctions;
 
 import animalsclasses.Animal;
 import java.util.ArrayList;
@@ -17,10 +17,9 @@ public class ListAllAnimals {
 
         System.out.println("\nAnimals in the Zoo:");
         for (String type : animals.keySet()) {
-            System.out.println("\nType: " + type);
             ArrayList<Animal> animalList = animals.get(type);
             for (Animal animal : animalList) {
-                System.out.println("- " + animal.getName());
+                System.out.println("- " + animal.toStringMainInfos());
             }
         }
     }

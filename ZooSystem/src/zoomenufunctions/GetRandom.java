@@ -1,4 +1,4 @@
-package interfacefunctions;
+package zoomenufunctions;
 
 import animalsclasses.Animal;
 
@@ -32,18 +32,6 @@ public class GetRandom {
         // Display the animal's details
         System.out.println("\nRandom Animal:");
         System.out.println("-----------------------");
-        System.out.println("Type: " + randomAnimal.getType());
-        System.out.println("Name: " + randomAnimal.getName());
-        System.out.println("Age: " + randomAnimal.getAge());
-        System.out.println("Weight: " + randomAnimal.getWeight());
-        System.out.println("Habitat: " + randomAnimal.getHabitat());
-        System.out.println("Diet: " + randomAnimal.getDiet());
-        System.out.println("Gender: " + randomAnimal.getGender());
-        System.out.println("Neutered: " + randomAnimal.isNeutered());
-        System.out.println("Behaviour: " + randomAnimal.getBehaviour());
-        System.out.println("Hungry: " + randomAnimal.isHungerStatus());
-        System.out.println("Healthy: " + randomAnimal.isHealthStatus());
-        System.out.println("Blood Type: " + randomAnimal.getBloodType());
-        System.out.println("-----------------------");
+        System.out.println(randomAnimal.toStringAllInfos());
     }
 }

@@ -25,8 +25,8 @@ public class Animal {
 
     // Constructor
     public Animal(String type, String name, int age, double weight, HabitatTypes habitat, String breed, double size,
-                  DietTypes diet, GenderTypes gender, boolean neutered, String behaviour, boolean hungerStatus,
-                  boolean healthStatus, BloodyTypes bloodType) {
+            DietTypes diet, GenderTypes gender, boolean neutered, String behaviour, boolean hungerStatus,
+            boolean healthStatus, BloodyTypes bloodType) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -154,5 +154,49 @@ public class Animal {
 
     public void setBloodType(BloodyTypes bloodType) {
         this.bloodType = bloodType;
+    }
+
+
+    public String toStringMainInfos() {
+        return String.format(
+                "Animal Details:\n"
+                + "-----------------\n"
+                + "Type: %s\n"
+                + "Name: %s\n"
+                + "Age: %d years\n"
+                + "Weight: %.2f kg\n"
+                + "Habitat: %s\n"
+                + "Breed: %s\n"
+                + "Size: %.2f m\n"
+                + "Diet: %s\n"
+                + "Gender: %s\n"
+                + "Neutered: %s",
+                type, name, age, weight, habitat, breed, size, diet, gender, neutered ? "Yes" : "No"
+        );
+    }
+
+    public String toStringAllInfos() {
+        return String.format(
+                "Animal Full Details:\n"
+                + "---------------------\n"
+                + "Type: %s\n"
+                + "Name: %s\n"
+                + "Age: %d years\n"
+                + "Weight: %.2f kg\n"
+                + "Habitat: %s\n"
+                + "Breed: %s\n"
+                + "Size: %.2f m\n"
+                + "Diet: %s\n"
+                + "Gender: %s\n"
+                + "Neutered: %s\n"
+                + "Behaviour: %s\n"
+                + "Hungry: %s\n"
+                + "Healthy: %s\n"
+                + "Blood Type: %s",
+                type, name, age, weight, habitat, breed, size, diet, gender,
+                neutered ? "Yes" : "No", behaviour, hungerStatus ? "Yes" : "No",
+                healthStatus ? "Yes" : "No", bloodType
+        );
+
     }
 }

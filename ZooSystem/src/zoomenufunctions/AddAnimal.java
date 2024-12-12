@@ -1,4 +1,4 @@
-package interfacefunctions;
+package zoomenufunctions;
 
 import animalsclasses.Animal;
 import java.util.ArrayList;

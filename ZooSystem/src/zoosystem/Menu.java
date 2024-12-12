@@ -1,7 +1,7 @@
 package zoosystem;
 
+import zoomenufunctions.*;
 import animalsclasses.Animal;
-import interfacefunctions.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,32 +65,6 @@ public class Menu implements Zoo {
         } while (selectedOption != Zoo.MenuOptions.EXIT);
     }
 
-    // Overridden methods
-    @Override
-    public void listAllAnimals() {
-        ListAllAnimals.listAllAnimals(animals); // Call the static method
-    }
-
-    @Override
-    public void listAllTypes() {
-        ListAllTypes.listAllTypes(animals); // Call the static method
-    }
-
-    @Override
-    public void addAnimal() {
-        AddAnimal.addAnimal(animals);
-    }
-
-    @Override
-    public void removeAnimal() {
-        RemoveAnimal.removeAnimal(animals); // Delegate the removal to the static utility method
-    }
-
-    @Override
-    public void getRandom() {
-        GetRandom.getRandomAnimal(animals); // Calls the static utility method
-    }
-
     // Submenu
     private void showSubMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -145,100 +119,70 @@ public class Menu implements Zoo {
         } while (selectedOption != Zoo.SubMenuOptions.RETURN_TO_MAIN_MENU);
     }
 
+    // Overridden methods
+    @Override
+    public void listAllAnimals() {
+        ListAllAnimals.listAllAnimals(animals); // Call the static method
+    }
+
+    @Override
+    public void listAllTypes() {
+        ListAllTypes.listAllTypes(animals); // Call the static method
+    }
+
+    @Override
+    public void addAnimal() {
+        AddAnimal.addAnimal(animals);
+    }
+
+    @Override
+    public void removeAnimal() {
+        RemoveAnimal.removeAnimal(animals); // Delegate the removal to the static utility method
+    }
+
+    @Override
+    public void getRandom() {
+        GetRandom.getRandomAnimal(animals); // Calls the static utility method
+    }
+
     @Override
     public void listSickAnimals() {
-        System.out.println("\nSick Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (!animal.isHealthStatus()) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListSickAnimals.listSickAnimals(animals);
     }
 
     @Override
     public void listMaleAnimals() {
-        System.out.println("\nMale Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.getGender().toString().equalsIgnoreCase("MALE")) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListMaleAnimals.listMaleAnimals(animals);
     }
 
     @Override
     public void listFemaleAnimals() {
-        System.out.println("\nFemale Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.getGender().toString().equalsIgnoreCase("FEMALE")) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListFemaleAnimals.listFemaleAnimals(animals);
     }
 
     @Override
     public void listNeuteredAnimals() {
-        System.out.println("\nNeutered Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.isNeutered()) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListNeuteredAnimals.listNeuteredAnimals(animals);
     }
 
     @Override
     public void listHerbivoreAnimals() {
-        System.out.println("\nHerbivore Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.getDiet().toString().equalsIgnoreCase("HERBIVORES")) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListHerbivoreAnimals.listHerbivoreAnimals(animals);
     }
 
     @Override
     public void listOmnivoreAnimals() {
-        System.out.println("\nOmnivore Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.getDiet().toString().equalsIgnoreCase("OMNIVORES")) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListOmnivoreAnimals.listOmnivoreAnimals(animals);
     }
 
     @Override
     public void listCarnivoreAnimals() {
-        System.out.println("\nCarnivore Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.getDiet().toString().equalsIgnoreCase("CARNIVORES")) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListCarnivoreAnimals.listCarnivoreAnimals(animals);
     }
 
     @Override
     public void listHungryAnimals() {
-        System.out.println("\nHungry Animals:");
-        for (ArrayList<Animal> animalList : animals.values()) {
-            for (Animal animal : animalList) {
-                if (animal.isHungerStatus()) {
-                    System.out.println(animal.getName() + " (" + animal.getType() + ")");
-                }
-            }
-        }
+        ListHungryAnimals.listHungryAnimals(animals);
     }
 
     // Getter for animals
